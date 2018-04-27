@@ -9,7 +9,13 @@ Quick links: [Using](#using) | [Installing](#installing) | [Contributing](#contr
 
 ## Using
 
+~~~
+wp reinstall 
+~~~
 
+Downloads and forcefully reinstalls WordPress core, themes, and plugins,
+all at their current versions. Skips themes and plugins not available on
+WordPress.org.
 
 ## Installing
 
