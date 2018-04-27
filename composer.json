@@ -1,6 +1,6 @@
 {
     "name": "danielbachhuber/reinstall-command",
-    "description": "Reinstall WordPress core, themes, and plugins",
+    "description": "Reinstalls WordPress core, themes, and plugins.",
     "type": "wp-cli-package",
     "homepage": "https://github.com/danielbachhuber/reinstall-command",
     "license": "MIT",
@@ -8,6 +8,9 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "autoload": {
+        "psr-4": {
+            "": "src/"
+        },
         "files": [ "command.php" ]
     },
     "require": {

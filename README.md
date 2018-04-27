@@ -1,7 +1,7 @@
 danielbachhuber/reinstall-command
 =================================
 
-Reinstall WordPress core, themes, and plugins
+Reinstalls WordPress core, themes, and plugins.
 
 [![Build Status](https://travis-ci.org/danielbachhuber/reinstall-command.svg?branch=master)](https://travis-ci.org/danielbachhuber/reinstall-command)
 
