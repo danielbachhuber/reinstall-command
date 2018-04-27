@@ -76,3 +76,29 @@ Feature: Reinstall WordPress core, themes, and plugins
       """
       Success: Reinstall complete.
       """
+
+  Scenario: Themes are reinstalled
+    Given a WP install
+    And I run `wp theme install twentysixteen --version=1.3 --force`
+
+    When I run `wp theme get twentysixteen --field=version`
+    Then STDOUT should contain:
+      """
+      1.3
+      """
+
+    When I run `wp reinstall`
+    Then STDOUT should contain:
+      """
+      Installing Twenty Sixteen
+      """
+    And STDOUT should contain:
+      """
+      Success: Reinstall complete.
+      """
+
+    When I run `wp theme get twentysixteen --field=version`
+    Then STDOUT should contain:
+      """
+      1.3
+      """

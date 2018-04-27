@@ -31,6 +31,14 @@ class Reinstall_Command {
 			WP_CLI::runcommand( "plugin install {$plugin['name']} --version={$plugin['version']} --force", array( 'exit_error' => false ) );
 		}
 
+		$themes = WP_CLI::runcommand( 'theme list --format=json', array(
+			'return' => true,
+			'parse'  => 'json',
+		) );
+		foreach ( $themes as $theme ) {
+			WP_CLI::runcommand( "theme install {$theme['name']} --version={$theme['version']} --force", array( 'exit_error' => false ) );
+		}
+
 		WP_CLI::success( 'Reinstall complete.' );
 	}
 
