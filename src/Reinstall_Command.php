@@ -10,6 +10,22 @@ class Reinstall_Command {
 	 * Downloads and forcefully reinstalls WordPress core, themes, and plugins,
 	 * all at their current versions. Skips themes and plugins not available on
 	 * WordPress.org.
+	 *
+	 * ## EXAMPLES
+	 *
+	 *     # Reinstalls core, Aksimet, and Twenty Sixteen
+	 *     $ wp reinstall
+	 *     Downloading WordPress 4.7.10 (en_US)...
+	 *     md5 hash verified: 57813ca592cd9a1eff210627ade9f350
+	 *     Success: WordPress downloaded.
+	 *     Installing Akismet Anti-Spam (3.3.2)
+	 *     Plugin updated successfully.
+	 *     Success: Installed 1 of 1 plugins.
+	 *     Skipped hello plugin.
+	 *     Installing Twenty Sixteen (1.3)
+	 *     Theme updated successfully.
+	 *     Success: Installed 1 of 1 themes.
+	 *     Success: Reinstall complete.
 	 */
 	public function __invoke() {
 		$core_version = WP_CLI::runcommand( 'core version', array( 'return' => true ) );
