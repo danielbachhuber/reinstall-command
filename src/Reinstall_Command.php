@@ -13,6 +13,9 @@ class Reinstall_Command {
 	 */
 	public function __invoke() {
 		$core_version = WP_CLI::runcommand( 'core version', array( 'return' => true ) );
+		if ( false !== stripos( $core_version, '-alpha-' ) ) {
+			$core_version = 'nightly';
+		}
 		WP_CLI::runcommand( "core download --skip-content --version={$core_version} --force", array( 'exit_error' => false ) );
 
 		$plugins = WP_CLI::runcommand( 'plugin list --format=json', array(
